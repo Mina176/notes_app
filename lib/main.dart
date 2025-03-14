@@ -21,22 +21,17 @@ class NotesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => AddNoteCubit()),
-      ],
-      child: MaterialApp(
-        initialRoute: NotesView.routeName,
-        routes: {
-          // When navigating to the "/" route, build the FirstScreen widget.
-          NotesView.routeName: (context) => const NotesView(),
-          // When navigating to the "/second" route, build the SecondScreen widget.
-          EditNoteView.routeName: (context) => const EditNoteView(),
-        },
-        theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
-        debugShowCheckedModeBanner: false,
-        home: NotesView(),
-      ),
+    return MaterialApp(
+      initialRoute: NotesView.routeName,
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        NotesView.routeName: (context) => const NotesView(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        EditNoteView.routeName: (context) => const EditNoteView(),
+      },
+      theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
+      debugShowCheckedModeBanner: false,
+      home: NotesView(),
     );
   }
 }
